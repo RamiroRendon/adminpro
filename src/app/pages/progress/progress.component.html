@@ -4,7 +4,11 @@
             <div class="card-body">
                 <h4 class="card-title">xd</h4>
                 <div class="proigress m-t-20">
-                    <div class="progress-bar bg-primary progress-bar-striped active" style="height: 5px;" [style.width]="getPorcentaje" role="progressbar"></div>
+                    <div class="progress-bar bg-primary progress-bar-striped active" style="height: 5px;" [style.width]="getProgreso1" role="progressbar"></div>
+                </div>
+
+                <div class="proigress m-t-20">
+                    <div class="progress-bar bg-info progress-bar-striped active" style="height: 5px;" [style.width]="getProgreso2" role="progressbar"></div>
                 </div>
             </div>
         </div>
@@ -15,19 +19,7 @@
     <div class="col-6">
         <div class="card">
             <div class="card-body">
-                <div class="input-group">
-                    <span class="input-group-btn">
-                        <button class="btn btn-primary" type="button">
-                            <i class="fa fa-minus"></i>
-                        </button>
-                    </span>
-                    <input type="text" class="form-control" placeholder="Product name">
-                    <span class="input-group-btn">
-                        <button class="btn btn-primary" type="button">
-                            <i class="fa fa-plus"></i>
-                        </button>
-                    </span>
-                </div>
+                <app-incrementador [progreso]="progreso1" (valorSalida)="progreso1 = $event"></app-incrementador>
             </div>
         </div>
     </div>
@@ -35,7 +27,7 @@
     <div class="col-6">
         <div class="card">
             <div class="card-body">
-                2
+                <app-incrementador [progreso]="progreso2" (valorSalida)="progreso2 = $event" [btnClass]="'btn-info'"></app-incrementador>
             </div>
         </div>
     </div>
